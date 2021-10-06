@@ -10,13 +10,13 @@ stages:
 build:
   stage: build
   tags:
-    - ugrad
+    - grad
   script:
     - $MAVEN_BUILD
 
 test:
   stage: test
   tags:
-    - ugrad
+    - grad
   script:
     - $MAVEN_TEST
