@@ -1,7 +1,7 @@
 image: maven:latest
 variables:
-  MAVEN_BUILD: "./mvn clean compile"
-  MAVEN_TEST: "./mvn test"
+  MAVEN_BUILD: "mvn clean compile"
+  MAVEN_TEST: "mvn test"
 
 stages:
   - build
@@ -12,6 +12,7 @@ build:
   tags:
     - grad
   script:
+    - cd A1
     - $MAVEN_BUILD
 
 test:
@@ -19,4 +20,5 @@ test:
   tags:
     - grad
   script:
+    - cd A1
     - $MAVEN_TEST
