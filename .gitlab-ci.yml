@@ -1,4 +1,7 @@
 image: maven:latest
+variables:
+  MAVEN_BUILD: "./mvn clean compile"
+  MAVEN_TEST: "./mvn test"
 
 stages:
   - build
@@ -9,11 +12,11 @@ build:
   tags:
     - ugrad
   script:
-    - mvn clean compile
+    - $MAVEN_BUILD
 
 test:
   stage: test
   tags:
     - ugrad
   script:
-    - mvn test
+    - $MAVEN_TEST
