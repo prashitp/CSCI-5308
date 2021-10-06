@@ -1,7 +1,7 @@
-image: maven:latest
+image: java:8
 variables:
-  MAVEN_BUILD: "mvn clean compile"
-  MAVEN_TEST: "mvn test"
+  MAVEN_BUILD: "mvnw clean compile"
+  MAVEN_TEST: "mvnw test"
 
 stages:
   - build
