@@ -11,6 +11,7 @@ build:
   stage: build
   tags:
     - dalfcs_docker_kvm
+    - dalfcs_gitlab_docker_ci
   script:
     - cd A1
     - $MAVEN_BUILD
@@ -19,6 +20,7 @@ test:
   stage: test
   tags:
     - dalfcs_docker_kvm
+    -dalfcs_gitlab_docker_ci
   script:
     - cd A1
     - $MAVEN_TEST
