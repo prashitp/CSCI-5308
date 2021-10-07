@@ -80,4 +80,11 @@ public class CalculatorTest {
         assertTrue(ans.contains("2"));
     }
 
+    @Test
+    public void addStringsTest() {
+        Calculator c = new Calculator();
+        String ans = c.addStrings("5.12212","2.4212");
+        assertEquals(ans, "7.54");
+    }
+
  }

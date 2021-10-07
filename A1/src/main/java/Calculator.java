@@ -31,4 +31,10 @@ public class Calculator {
         }
         return ans;
     }
+
+    public String addStrings(String s1, String s2) {
+        double d1 = Double.parseDouble(s1);
+        double d2 = Double.parseDouble(s2);
+        return String.format("%.2f",(d1+d2));
+    }
 }
