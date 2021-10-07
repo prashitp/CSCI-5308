@@ -143,7 +143,7 @@ public class CalculatorTest {
         String ans = null;
         try {
             ans = c.divideStrings("5.12","2.10");
-        } catch (DecimalExceededException e) {
+        } catch (DecimalExceededException | DivideByZeroException e) {
             System.out.println(e);
         }
         assertEquals("2.44",ans);
@@ -154,6 +154,13 @@ public class CalculatorTest {
         Calculator c = new Calculator();
         Exception exp = assertThrows(DecimalExceededException.class, () -> c.divideStrings("5.12212","2.4212"));
         assertEquals("Decimal places exceeded.",exp.getMessage());
+    }
+
+    @Test
+    public void divideStringsDivideByZeroExceptionTest() throws DivideByZeroException {
+        Calculator c = new Calculator();
+        Exception exp = assertThrows(DivideByZeroException.class, () -> c.divideStrings("5.12","0"));
+        assertEquals("Dividing By Zero.",exp.getMessage());
     }
 
  }

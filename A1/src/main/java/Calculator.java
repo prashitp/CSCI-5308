@@ -71,7 +71,11 @@ public class Calculator {
         return String.format("%.2f",(d1*d2));
     }
 
-    public String divideStrings(String s1, String s2) throws DecimalExceededException {
+    public String divideStrings(String s1, String s2) throws DecimalExceededException, DivideByZeroException {
+        if(Double.parseDouble(s2) == 0.0) {
+            throw new DivideByZeroException("Dividing By Zero.");
+        }
+
         String[] forS1 = s1.split("\\.");
         String[] forS2 = s2.split("\\.");
 
@@ -84,3 +88,5 @@ public class Calculator {
         return String.format("%.2f",(d1/d2));
     }
 }
+
+//Dividing By Zero.
