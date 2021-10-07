@@ -99,4 +99,61 @@ public class CalculatorTest {
         assertEquals("Decimal places exceeded.",exp.getMessage());
     }
 
+    @Test
+    public void subtractStringsTest() {
+        Calculator c = new Calculator();
+        String ans = null;
+        try {
+            ans = c.subtractStrings("5.12","2.10");
+        } catch (DecimalExceededException e) {
+            System.out.println(e);
+        }
+        assertEquals("3.02",ans);
+    }
+
+    @Test
+    public void subtractStringsMoreThan2DecimalExceptionTest() throws DecimalExceededException {
+        Calculator c = new Calculator();
+        Exception exp = assertThrows(DecimalExceededException.class, () -> c.subtractStrings("5.12212","2.4212"));
+        assertEquals("Decimal places exceeded.",exp.getMessage());
+    }
+
+    @Test
+    public void multiplyStringsTest() {
+        Calculator c = new Calculator();
+        String ans = null;
+        try {
+            ans = c.multiplyStrings("5.12","2.10");
+        } catch (DecimalExceededException e) {
+            System.out.println(e);
+        }
+        assertEquals("10.75",ans);
+    }
+
+    @Test
+    public void multiplyStringsMoreThan2DecimalExceptionTest() throws DecimalExceededException {
+        Calculator c = new Calculator();
+        Exception exp = assertThrows(DecimalExceededException.class, () -> c.multiplyStrings("5.12212","2.4212"));
+        assertEquals("Decimal places exceeded.",exp.getMessage());
+    }
+
+    @Test
+    public void divideStringsTest() {
+        Calculator c = new Calculator();
+        String ans = null;
+        try {
+            ans = c.divideStrings("5.12","2.10");
+        } catch (DecimalExceededException e) {
+            System.out.println(e);
+        }
+        assertEquals("2.44",ans);
+    }
+
+    @Test
+    public void divideStringsMoreThan2DecimalExceptionTest() throws DecimalExceededException {
+        Calculator c = new Calculator();
+        Exception exp = assertThrows(DecimalExceededException.class, () -> c.divideStrings("5.12212","2.4212"));
+        assertEquals("Decimal places exceeded.",exp.getMessage());
+    }
+
  }

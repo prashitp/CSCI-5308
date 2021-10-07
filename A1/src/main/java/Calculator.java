@@ -44,4 +44,43 @@ public class Calculator {
         double d2 = Double.parseDouble(s2);
         return String.format("%.2f",(d1+d2));
     }
+
+    public String subtractStrings(String s1, String s2) throws DecimalExceededException {
+        String[] forS1 = s1.split("\\.");
+        String[] forS2 = s2.split("\\.");
+
+        if(forS1[1].length() > 2 || forS2[1].length() > 2) {
+            throw new DecimalExceededException("Decimal places exceeded.");
+        }
+
+        double d1 = Double.parseDouble(s1);
+        double d2 = Double.parseDouble(s2);
+        return String.format("%.2f",(d1-d2));
+    }
+
+    public String multiplyStrings(String s1, String s2) throws DecimalExceededException {
+        String[] forS1 = s1.split("\\.");
+        String[] forS2 = s2.split("\\.");
+
+        if(forS1[1].length() > 2 || forS2[1].length() > 2) {
+            throw new DecimalExceededException("Decimal places exceeded.");
+        }
+
+        double d1 = Double.parseDouble(s1);
+        double d2 = Double.parseDouble(s2);
+        return String.format("%.2f",(d1*d2));
+    }
+
+    public String divideStrings(String s1, String s2) throws DecimalExceededException {
+        String[] forS1 = s1.split("\\.");
+        String[] forS2 = s2.split("\\.");
+
+        if(forS1[1].length() > 2 || forS2[1].length() > 2) {
+            throw new DecimalExceededException("Decimal places exceeded.");
+        }
+
+        double d1 = Double.parseDouble(s1);
+        double d2 = Double.parseDouble(s2);
+        return String.format("%.2f",(d1/d2));
+    }
 }
