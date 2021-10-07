@@ -15,8 +15,8 @@ public  class ValidationTest {
     @Test
     public void validateTest() {
         Validation v = new Validation();
-        List<String> ans = v.validate("1.11","2.321");
-        assertEquals("Decimal Exceeded for 2.321",ans.get(0));
+        List<String> ans = v.validate("1.11","2.22");
+        assertEquals(0,ans.size());
     }
 
 }
