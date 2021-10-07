@@ -25,4 +25,11 @@ public  class ValidationTest {
         List<String> ans = v.validate("1.111");
         assertEquals(1,ans.size());
     }
+
+    @Test
+    public void twoValuesValidateTest() {
+        Validation v = new Validation();
+        List<String> ans = v.validate("1.111","2.222");
+        assertEquals(2,ans.size());
+    }
 }
