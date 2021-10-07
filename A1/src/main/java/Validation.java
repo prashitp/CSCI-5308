@@ -7,7 +7,7 @@ public class Validation {
         for(String value: values){
             String[] forValue = value.split("\\.");
             if(forValue[1].length() > 2) {
-                errorArray.add("Decimal Exceeded for " + value);
+                errorArray.add("Decimal places exceeded for " + value);
             }
         }
         return errorArray;

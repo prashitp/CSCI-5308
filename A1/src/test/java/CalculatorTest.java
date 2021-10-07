@@ -163,4 +163,47 @@ public class CalculatorTest {
         assertEquals("Dividing By Zero.",exp.getMessage());
     }
 
+    @Test
+    public void addStringsMoreThan2DecimalExceptionTestWithValidationClass() throws DecimalExceededException {
+        Validation v = new Validation();
+        Calculator c = new Calculator(v);
+        Exception exp = assertThrows(DecimalExceededException.class, () -> c.addRevised("5.12","2.4212"));
+        assertEquals("Decimal places exceeded for 1 values",exp.getMessage());
+    }
+
+    @Test
+    public void subtractStringsTestWithValidationClass() throws DecimalExceededException {
+        Validation v = new Validation();
+        Calculator c = new Calculator(v);
+        String ans = null;
+        try {
+            ans = c.subtractRevised("5.12","2.10");
+        } catch (DecimalExceededException e) {
+            System.out.println(e);
+        }
+        assertEquals("3.02",ans);
+    }
+
+    @Test
+    public void multiplyStringsMoreThan2DecimalExceptionTestWithValidationClass() throws DecimalExceededException {
+        Validation v = new Validation();
+        Calculator c = new Calculator(v);
+        Exception exp = assertThrows(DecimalExceededException.class, () -> c.multiplyRevised("5.1212","2.4212"));
+        assertEquals("Decimal places exceeded for 2 values",exp.getMessage());
+    }
+
+    @Test
+    public void divideStringsTestWithValidationClass() throws DecimalExceededException {
+        Validation v = new Validation();
+        Calculator c = new Calculator(v);
+
+        String ans = null;
+        try {
+            ans = c.divideRevised("5.12","2.10");
+        } catch (DecimalExceededException e) {
+            System.out.println(e);
+        }
+        assertEquals("2.44",ans);
+    }
+
  }

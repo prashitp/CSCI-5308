@@ -1,4 +1,12 @@
+import java.util.List;
+
 public class Calculator {
+    Validation validaton;
+    public Calculator(){}
+
+    public Calculator(Validation v){
+        validaton = v;
+    }
     public int add(int num1, int num2) {
         return num1 + num2;
     }
@@ -86,6 +94,50 @@ public class Calculator {
         double d1 = Double.parseDouble(s1);
         double d2 = Double.parseDouble(s2);
         return String.format("%.2f",(d1/d2));
+    }
+
+    public String addRevised(String s1, String s2) throws DecimalExceededException {
+        List<String> validated= validaton.validate(s1,s2);
+        if(validated.size() == 0) {
+            double d1 = Double.parseDouble(s1);
+            double d2 = Double.parseDouble(s2);
+            return String.format("%.2f",(d1+d2));
+        } else {
+            throw new DecimalExceededException("Decimal places exceeded for "+validated.size()+" values");
+        }
+    }
+
+    public String subtractRevised(String s1, String s2) throws DecimalExceededException {
+        List<String> validated= validaton.validate(s1,s2);
+        if(validated.size() == 0) {
+            double d1 = Double.parseDouble(s1);
+            double d2 = Double.parseDouble(s2);
+            return String.format("%.2f",(d1-d2));
+        } else {
+            throw new DecimalExceededException("Decimal places exceeded for "+validated.size()+" values");
+        }
+    }
+
+    public String multiplyRevised(String s1, String s2) throws DecimalExceededException {
+        List<String> validated= validaton.validate(s1,s2);
+        if(validated.size() == 0) {
+            double d1 = Double.parseDouble(s1);
+            double d2 = Double.parseDouble(s2);
+            return String.format("%.2f",(d1*d2));
+        } else {
+            throw new DecimalExceededException("Decimal places exceeded for "+validated.size()+" values");
+        }
+    }
+
+    public String divideRevised(String s1, String s2) throws DecimalExceededException {
+        List<String> validated= validaton.validate(s1,s2);
+        if(validated.size() == 0) {
+            double d1 = Double.parseDouble(s1);
+            double d2 = Double.parseDouble(s2);
+            return String.format("%.2f",(d1/d2));
+        } else {
+            throw new DecimalExceededException("Decimal places exceeded for "+validated.size()+" values");
+        }
     }
 }
 
