@@ -6,7 +6,7 @@ public  class ValidationTest {
 
     @Test
     public void classNotNullTest() {
-        Calculator c = new Calculator();
-        assertNotNull(c);
+        Validation v = new Validation();
+        assertNotNull(v);
     }
 }
