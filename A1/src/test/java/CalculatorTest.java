@@ -52,4 +52,32 @@ public class CalculatorTest {
         assertEquals(ans, 5);
     }
 
+    @Test
+    public void fizzBuzzContainsDivisibleBy3NoTest(){
+        Calculator c = new Calculator();
+        String ans = c.fizzbuzz(3);
+        assertTrue(ans.contains("Fizz"));
+    }
+
+    @Test
+    public void fizzBuzzContainsdivisibleBy5NoTest(){
+        Calculator c = new Calculator();
+        String ans = c.fizzbuzz(5);
+        assertTrue(ans.contains("Buzz"));
+    }
+
+    @Test
+    public void fizzBuzzContainesDivisibleBy3And5NoTest(){
+        Calculator c = new Calculator();
+        String ans = c.fizzbuzz(15);
+        assertTrue(ans.contains("FizzBuzz"));
+    }
+
+    @Test
+    public void fizzBuzzContainesNotDivisibleBy3And5NoTest(){
+        Calculator c = new Calculator();
+        String ans = c.fizzbuzz(2);
+        assertTrue(ans.contains("2"));
+    }
+
  }
