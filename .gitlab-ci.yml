@@ -24,3 +24,8 @@ test:
   script:
     - cd A1
     - $MAVEN_TEST
+  artifacts:
+    when: always
+    reports:
+      junit: build/test-results/test/**/TEST-*.xml
+
