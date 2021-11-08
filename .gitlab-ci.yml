@@ -27,5 +27,5 @@ test:
   artifacts:
     when: always
     reports:
-      junit: build/test-results/test/**/TEST-*.xml
+      junit: target/test-results/test/**/TEST-*.xml
 
