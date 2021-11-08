@@ -23,7 +23,7 @@ test:
     - dalfcs_gitlab_docker_ci
   script:
     - cd A1
-    - $MAVEN_TEST
+    - mvn verify
   artifacts:
     when: always
     reports:
