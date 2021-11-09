@@ -23,9 +23,10 @@ class Circle extends Shape {
 
 	@Override
 	public double findArea(){
-		return radius*3.14*3.14;
+		return 3.14*radius*radius;
 	}
 
+	//here we break lsp
 	@Override
 	public double findVolume(){
 		//Not supported

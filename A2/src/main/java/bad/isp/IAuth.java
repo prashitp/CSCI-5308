@@ -28,11 +28,15 @@ class SimpleLogin implements IAuth {
 		return "Invalid credentials";
 	}
 
+	//here we break isp
+	@Override
 	public int sendOTP(String email) {
 		//Not supported
 		return -1;
 	}
 
+	//here we break isp
+	@Override
 	public String loginUsingOTP(int OTP) {
 		//Not supported
 		return "This method is not allowed";
@@ -40,9 +44,9 @@ class SimpleLogin implements IAuth {
 }
 
 class OTPLogin implements IAuth {
-	Random random = new Random();
-	int otp = random.nextInt(10000);
+	int otp = (int) (Math.floor(Math.random() * (9999 - 1000) ) + 1000);
 
+	//here we break isp
 	@Override
 	public String loginUsingPassword(String username, String password) {
 		//Not supported
