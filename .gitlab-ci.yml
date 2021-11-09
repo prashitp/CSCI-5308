@@ -1,0 +1,31 @@
+image: maven:latest
+variables:
+  MAVEN_BUILD: "mvn clean compile"
+  MAVEN_TEST: "mvn verify"
+
+stages:
+  - build
+  - test
+
+build:
+  stage: build
+  tags:
+    - dalfcs_docker_kvm
+    - dalfcs_gitlab_docker_ci
+  script:
+    - cd A2
+    - $MAVEN_BUILD
+
+test:
+  stage: test
+  tags:
+    - dalfcs_docker_kvm
+    - dalfcs_gitlab_docker_ci
+  script:
+    - cd A2
+    - $MAVEN_TEST
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - A2/target/surefire-reports/TEST-*.xml
