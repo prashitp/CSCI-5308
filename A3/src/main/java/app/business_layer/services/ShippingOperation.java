@@ -1,9 +1,9 @@
-package app.business.services;
+package app.business_layer.services;
 
-import app.business.model.Driver;
-import app.business.model.Picker;
-import app.persistence.*;
-import app.presentation.*;
+import app.business_layer.model.Driver;
+import app.business_layer.model.Picker;
+import app.persistence_layer.*;
+import app.presentation_layer.*;
 
 public class ShippingOperation implements IShippingOperation {
 	private IHumanResources humanResources;

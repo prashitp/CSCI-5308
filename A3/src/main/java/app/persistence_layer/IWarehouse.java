@@ -1,4 +1,4 @@
-package app.persistence;
+package app.persistence_layer;
 
 public interface IWarehouse {
 	void add(String item, int count);

@@ -1,8 +1,8 @@
 package app;
 
-import app.business.*;
-import app.persistence.*;
-import app.presentation.*;
+import app.business_layer.*;
+import app.persistence_layer.*;
+import app.presentation_layer.*;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;

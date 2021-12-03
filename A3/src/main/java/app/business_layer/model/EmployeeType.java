@@ -1,4 +1,4 @@
-package app.business.model;
+package app.business_layer.model;
 
 public enum EmployeeType {
 	DRIVER,

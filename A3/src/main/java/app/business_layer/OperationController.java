@@ -1,7 +1,7 @@
-package app.business;
+package app.business_layer;
 
-import app.business.services.*;
-import app.persistence.*;
+import app.business_layer.services.*;
+import app.persistence_layer.*;
 
 public class OperationController {
 	private IHumanResources humanResources;

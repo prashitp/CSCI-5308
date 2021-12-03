@@ -1,7 +1,7 @@
-package app.business.model;
+package app.business_layer.model;
 
 import app.Constants;
-import app.presentation.*;
+import app.presentation_layer.*;
 
 public class Driver extends Employee {
 	public Driver() {

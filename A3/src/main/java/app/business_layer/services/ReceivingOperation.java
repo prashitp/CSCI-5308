@@ -1,8 +1,8 @@
-package app.business.services;
+package app.business_layer.services;
 
-import app.business.model.ForkliftOperator;
-import app.persistence.*;
-import app.presentation.*;
+import app.business_layer.model.ForkliftOperator;
+import app.persistence_layer.*;
+import app.presentation_layer.*;
 
 public class ReceivingOperation implements IReceivingOperation {
 	private IHumanResources humanResources;
